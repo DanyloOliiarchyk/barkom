@@ -1,14 +1,11 @@
 package com.reconsale.barkom.cms.menu;
 
-import com.reconsale.barkom.cms.models.DBCategory;
 import com.reconsale.barkom.cms.models.File;
-import com.reconsale.barkom.cms.services.DBCategoryService;
 import com.reconsale.barkom.cms.views.MessageView;
 import com.reconsale.barkom.cms.views.RecipeView;
 import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouterLink;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,7 +64,6 @@ public class MenuCreator {
     private Details createSections(Category category, Details details) {
         if (!category.getSubCategories().isEmpty()) {
             for (Category c : category.getSubCategories()) {
-                c.setParentName(category.getName());
                 Details details1 = createSections(c, new Details());
                 details.addContent(details1);
             }
