@@ -1,0 +1,1 @@
+[{"id":278,"title":"gffg","text":"gfh","startDate":{"year":2021,"month":1,"day":27},"endDate":{"year":2021,"month":1,"day":29},"status":"Редагується","category":"Вироби_з_субпродуктів"},{"id":279,"title":"rthhhhhhhh","text":"hhhhhhhhhhhhhhhh","startDate":{"year":2021,"month":1,"day":13},"endDate":{"year":2021,"month":1,"day":29},"status":"Редагується","category":"Хліб"}]

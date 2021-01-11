@@ -1,0 +1,39 @@
+a[highlight] {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.header {
+    padding: 0 var(--lumo-space-m);
+}
+
+.header h1.logo {
+    font-size: 1em;
+    margin: var(--lumo-space-m);
+}
+
+.list-view .content {
+    display: flex;
+}
+
+.list-view .barkom-grid {
+    flex: 2;
+}
+
+.list-view .barkom-form {
+    flex: 1;
+    padding: var(--lumo-space-m);
+}
+
+@media all and (max-width: 1100px) {
+    .list-view.editing .toolbar,
+    .list-view.editing .barkom-grid {
+        display: none;
+    }
+}
+
+.branch {
+    /*color: blue;*/
+    font-size: 110%;
+    font-weight: bold
+}
