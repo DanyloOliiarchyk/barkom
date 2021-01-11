@@ -12,7 +12,6 @@ public class Category {
     private String name;
     private List<String> products;
     private List<Category> subCategories;
-    private String parentName;
 
     public Category() {
         id = ++count;

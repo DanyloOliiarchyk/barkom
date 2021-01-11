@@ -42,7 +42,6 @@ public class Message {
     @NotNull
     private Message.Status status;
 
-
     @NotEmpty
     @NotNull
     private String category;

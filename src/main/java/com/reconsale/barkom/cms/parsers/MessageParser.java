@@ -20,10 +20,10 @@ public class MessageParser {
 
         if (position != null) {
             for (int j = position - 1; j >= 0; j--) {
-                if (arr[j].trim().startsWith("-")){
+                if (arr[j].trim().startsWith("-")) {
                     continue;
                 }
-                if (arr[j].length() - arr[j].trim().length() < length){
+                if (arr[j].length() - arr[j].trim().length() < length) {
                     result = arr[j];
                     break;
                 }
