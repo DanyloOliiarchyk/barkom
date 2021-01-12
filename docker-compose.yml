@@ -7,10 +7,10 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=barkom_db
-      - MYSQL_USER=root
+#      - MYSQL_USER=root
       - MYSQL_PASSWORD=root
     ports:
-      - 3310:3306
+      - 3306:3306
 
   app:
     image: barkom-app
