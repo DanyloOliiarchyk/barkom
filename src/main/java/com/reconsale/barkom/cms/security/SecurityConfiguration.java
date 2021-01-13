@@ -1,5 +1,8 @@
 package com.reconsale.barkom.cms.security;
 
+import com.reconsale.barkom.cms.models.Customer;
+import com.reconsale.barkom.cms.services.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -21,6 +24,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String LOGIN_URL = "/login";
     private static final String LOGOUT_SUCCESS_URL = "/login";
 
+    @Autowired
+    private CustomerService customerService;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -40,15 +46,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
+
+        Customer customer1 = new Customer("Taras", "1111");
+        Customer customer2 = new Customer("Lyudmyla", "2222");
+        customerService.saveUserIfNotExist(customer1);
+        customerService.saveUserIfNotExist(customer2);
+
         UserDetails user1 =
                 User.withUsername("Taras")
-                        .password("{noop}1111")
+                        .password("{noop}" + customerService.getCustomerPassword("Taras"))
                         .roles("USER")
                         .build();
 
         UserDetails user2 =
                 User.withUsername("Lyudmyla")
-                        .password("{noop}2222")
+                        .password("{noop}" + customerService.getCustomerPassword("Lyudmyla"))
                         .roles("USER")
                         .build();
 
